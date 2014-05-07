@@ -12,6 +12,18 @@ describe("Combinators 01", function () {
 		assert.isTrue(valid);
 	});
 
+    it("allOf success with validateMultiple", function () {
+        var data = 10;
+        var schema = {
+            "allOf": [
+                {"type": "integer"},
+                {"minimum": 5}
+            ]
+        };
+        var valid = tv4.validateMultiple(data, schema);
+        assert.isTrue(valid);
+    });
+
 	it("allOf failure", function () {
 		var data = 1;
 		var schema = {

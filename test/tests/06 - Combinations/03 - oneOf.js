@@ -13,6 +13,19 @@ describe("Combinators 03", function () {
 		assert.isTrue(valid);
 	});
 
+    it("oneOf success with validateMultiple", function () {
+        var data = 5;
+        var schema = {
+            "oneOf": [
+                {"type": "integer"},
+                {"type": "string"},
+                {"type": "string", minLength: 1}
+            ]
+        };
+        var valid = tv4.validateMultiple(data, schema);
+        assert.isTrue(valid);
+    });
+
 	it("oneOf failure (too many)", function () {
 		var data = "string";
 		var schema = {
