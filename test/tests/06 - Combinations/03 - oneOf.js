@@ -43,7 +43,7 @@ describe("Combinators 03", function () {
     });
 
     it("oneOf success with validateMultiple 3", function () {
-        var data = {"type1": "string", "type2": "string"};
+        var data = {"type1": "string"};
         var schema = {
             properties: {
                 "type1": {"type": "string"},
