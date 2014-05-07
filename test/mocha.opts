@@ -1,2 +1,3 @@
 --reporter Spec
+--recursive
 test/all_concat
